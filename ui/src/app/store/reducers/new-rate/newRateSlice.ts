@@ -9,14 +9,14 @@ type NewRateType = {
   description: string,
 }
 
-export interface CreatingRateState {
+export interface NewRateState {
   value: NewRateType | null;
   loading: boolean,
   error: boolean | null,
   submited: boolean,
 }
 
-const initialState: CreatingRateState = {
+const initialState: NewRateState = {
   value: null,
   loading: true,
   error: null,
@@ -50,10 +50,8 @@ export const newRateSlice = createSlice({
       .addCase(emptyRateFetch.fulfilled, (state, action) => {
         state.loading = false;
         state.value = {
-          id: action.payload.id,
+          ...action.payload,
           rate: 0,
-          title: action.payload.title,
-          description: action.payload.description,
         };
       });
   },

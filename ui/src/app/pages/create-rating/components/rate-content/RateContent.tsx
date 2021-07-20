@@ -5,6 +5,8 @@ import { useAppSelector } from 'app/hooks/redux/useAppSelector';
 import { selectNewRate, setRate } from 'app/store/reducers/new-rate/newRateSlice';
 import { DoneOutlineIcon } from 'app/components/icons';
 import { RateContentWrapper } from './RateContent.style';
+import { useEffect } from 'react';
+import { submitRate } from 'app/store/reducers/new-rate/newRateAPI';
 
 function RateContent () {
   const { newRate } = useAppSelector(selectNewRate);
@@ -14,13 +16,19 @@ function RateContent () {
     dispatch(setRate(newValue));
   };
 
+  useEffect(() => {
+    if (newRate.submited && newRate.value !== null) {
+      submitRate({ data: newRate.value });
+    }
+  }, [newRate.submited]);
+
   return (
     <RateContentWrapper>
       {newRate.loading && <Loader />}
         {newRate.value !== null && (
           <div className="rate-content">
             <div className="title">{!newRate.submited ? newRate.value.title : 'Thanks!'}</div>
-            <div className="description">{!newRate.submited ? newRate.value.description : 'Your rate has been submited'}</div>
+            <div className="description">{!newRate.submited ? newRate.value.description : 'Your rate has been submitted'}</div>
             <div className="rating-wrapper">
               <Rating
                 name="anonymus-rating"

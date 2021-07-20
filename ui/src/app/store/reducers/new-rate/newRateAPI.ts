@@ -6,6 +6,7 @@ interface IFetchedRateResult {
     description: string,
   }
 }
+
 export function fetchRate (id: string) {
   return new Promise<IFetchedRateResult>((resolve) =>
     setTimeout(() => resolve({
@@ -16,4 +17,10 @@ export function fetchRate (id: string) {
       },
     }), 500),
   );
+}
+
+export function submitRate (params: IFetchedRateResult) {
+  console.log({
+    ...params,
+  });
 }

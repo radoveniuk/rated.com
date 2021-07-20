@@ -4,6 +4,7 @@ import useGlobalData from 'app/hooks/useGlobalData';
 import { PageWrapper } from 'app/styles/base-components';
 import { profileFetch, selectProfile } from 'app/store/reducers/profile/profileSlice';
 import { useAppSelector } from 'app/hooks/redux/useAppSelector';
+import ProfileHeader from './components/profile-header';
 
 function ProfilePage () {
   const { urlParams } = useGlobalData();
@@ -16,7 +17,11 @@ function ProfilePage () {
 
   console.log(profile);
 
-  return <PageWrapper>Profile Page</PageWrapper>;
+  return (
+    <PageWrapper>
+      <ProfileHeader />
+    </PageWrapper>
+  );
 }
 
 export default ProfilePage;

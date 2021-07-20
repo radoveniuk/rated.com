@@ -3,12 +3,13 @@ import { BaseSyntheticEvent, FC } from 'react';
 import { RatingWrapper } from './Rating.style';
 
 interface IRatingProps {
-  name: string,
-  defaultValue: number,
-  maxValue: number,
-  precision: number,
-  onChange: (value: number | null) => void,
-  size?: 'small' | 'large' | 'medium',
+  name: string;
+  defaultValue: number;
+  maxValue: number;
+  precision: number;
+  onChange: (value: number | null) => void;
+  size?: 'small' | 'large' | 'medium';
+  disabled?: boolean;
 }
 
 const Rating: FC<IRatingProps> = ({
@@ -18,6 +19,7 @@ const Rating: FC<IRatingProps> = ({
   precision,
   onChange,
   size,
+  disabled,
 }) => {
   const changeHandler = (e: BaseSyntheticEvent, newValue: number | null) => {
     onChange(newValue);
@@ -31,6 +33,7 @@ const Rating: FC<IRatingProps> = ({
         max={maxValue}
         onChange={changeHandler}
         size={size}
+        disabled={disabled}
       />
     </RatingWrapper>
   );

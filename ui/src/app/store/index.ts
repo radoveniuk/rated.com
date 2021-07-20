@@ -1,11 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from './reducers/counter/counterSlice';
-import currentRateSlice from './reducers/current-rate/currentRateSlice';
+import newRateSlice from './reducers/new-rate/newRateSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    currentRate: currentRateSlice,
+    newRate: newRateSlice,
   },
 });
 

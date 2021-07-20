@@ -1,59 +1,66 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../../store';
-import { fetchRate } from './currentRateAPI';
+import { RootState } from '../..';
+import { fetchRate } from './newRateAPI';
 
-type CreatingRateType = {
+type NewRateType = {
   id: string,
   title: string,
-  rate: number | null
+  rate: number | null,
+  description: string,
 }
 
 export interface CreatingRateState {
-  value: CreatingRateType | null;
-  status: 'idle' | 'loading' | 'failed';
+  value: NewRateType | null;
+  loading: boolean,
+  error: boolean | null,
+  submited: boolean,
 }
 
 const initialState: CreatingRateState = {
   value: null,
-  status: 'loading',
+  loading: true,
+  error: null,
+  submited: false,
 };
 
 export const emptyRateFetch = createAsyncThunk(
-  'currentRate/fetch',
+  'newRate/fetch',
   async (id: string) => {
     const response = await fetchRate(id);
     return response.data;
   },
 );
 
-export const currentRateSlice = createSlice({
-  name: 'currentRate',
+export const newRateSlice = createSlice({
+  name: 'newRate',
   initialState,
   reducers: {
     setRate: (state, action: PayloadAction<number | null>) => {
       if (state.value) {
         state.value.rate = action.payload;
+        state.submited = true;
       }
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(emptyRateFetch.pending, (state) => {
-        state.status = 'loading';
+        state.loading = true;
       })
       .addCase(emptyRateFetch.fulfilled, (state, action) => {
-        state.status = 'idle';
+        state.loading = false;
         state.value = {
           id: action.payload.id,
           rate: 0,
           title: action.payload.title,
+          description: action.payload.description,
         };
       });
   },
 });
 
-export const { setRate } = currentRateSlice.actions;
+export const { setRate } = newRateSlice.actions;
 
-export const selectCurrentRate = (state: RootState) => state;
+export const selectNewRate = (state: RootState) => state;
 
-export default currentRateSlice.reducer;
+export default newRateSlice.reducer;

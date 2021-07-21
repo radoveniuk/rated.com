@@ -1,12 +1,39 @@
-// A mock function to mimic making an async request for data
+import { ProfileType, RatingType } from 'app/types/profile';
+
+const fakeRatings: RatingType[] = [
+  {
+    id: '1',
+    name: 'First',
+    description: 'first rating',
+    rating: Math.floor(Math.random() * 5),
+  },
+  {
+    id: '2',
+    name: 'Second',
+    description: 'sec rating',
+    rating: Math.floor(Math.random() * 5),
+  },
+  {
+    id: '3',
+    name: 'Third',
+    description: 'third rating',
+    rating: Math.floor(Math.random() * 5),
+  },
+  {
+    id: '4',
+    name: 'Fourth',
+    description: 'forth rating',
+    rating: Math.floor(Math.random() * 5),
+  },
+  {
+    id: '5',
+    name: '5th',
+    description: '5th rating',
+    rating: Math.floor(Math.random() * 5),
+  },
+];
 interface IFetchedProfileResult {
-  data: {
-    id: string;
-    name: string;
-    username: string;
-    email: string;
-    rating: number;
-  }
+  data: ProfileType
 }
 
 export async function fetchProfile (id: string) {
@@ -18,6 +45,7 @@ export async function fetchProfile (id: string) {
           data: {
             ...data,
             rating: Math.floor(Math.random() * 5),
+            ratings: fakeRatings,
           },
         });
       }),

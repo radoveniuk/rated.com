@@ -1,23 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { IProfileState } from 'app/types/profile';
 import { RootState } from '../..';
 import { fetchProfile } from './profileAPI';
 
-type ProfileType = {
-  id: string,
-  name: string,
-  username: string,
-  email: string,
-  rating: number,
-}
-
-export interface ProfileState {
-  value: ProfileType | null;
-  loading: boolean,
-  error: boolean | null,
-}
-
-const initialState: ProfileState = {
-  value: null,
+const initialState: IProfileState = {
+  data: null,
   loading: true,
   error: null,
 };
@@ -48,7 +35,7 @@ export const profileSlice = createSlice({
       })
       .addCase(profileFetch.fulfilled, (state, action) => {
         state.loading = false;
-        state.value = action.payload;
+        state.data = action.payload;
       });
   },
 });

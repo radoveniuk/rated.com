@@ -10,4 +10,5 @@ export const colors = {
   paleText: '#808080',
   blackGrey: '#4a4a4a',
   blackDarkGrey: '#3B3B3B',
+  lightGrey: '#e6e6e6',
 };

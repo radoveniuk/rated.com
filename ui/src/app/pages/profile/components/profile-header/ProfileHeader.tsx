@@ -11,13 +11,13 @@ const ProfileHeader: FC = () => {
   const { profile } = useAppSelector(selectProfile);
   return (
     <ProfileHeaderWrapper>
-      {profile.value !== null && (
+      {profile.data !== null && (
         <div className="title-info-wrapper flex align-items-center">
-          <Avatar size={100} src={url} alt={profile.value.username} />
+          <Avatar size={100} src={url} alt={profile.data.username} />
           <div className="title-info ml-24">
-            <h2>{profile.value.name}</h2>
-            <p>{profile.value.username}</p>
-            <Rating name="profile-rating" defaultValue={profile.value.rating} readOnly />
+            <h2>{profile.data.name}</h2>
+            <p>{profile.data.username}</p>
+            <Rating name="profile-rating" defaultValue={profile.data.rating} readOnly />
           </div>
         </div>
       )}

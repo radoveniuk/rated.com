@@ -7,6 +7,7 @@ import { useAppSelector } from 'app/hooks/useAppSelector';
 import ProfileHeader from './components/profile-header';
 import Loader from 'app/components/ui/loader';
 import ProfileActions from './components/profile-actions';
+import ProfileRatings from './components/profile-ratings';
 
 function ProfilePage () {
   const { urlParams } = useGlobalData();
@@ -14,7 +15,7 @@ function ProfilePage () {
   const { profile } = useAppSelector(selectProfile);
 
   useEffect(() => {
-    if (urlParams.id || !profile.value || profile.value.id !== '3') {
+    if (urlParams.id || !profile.data || profile.data.id !== '3') {
       dispatch(profileFetch(urlParams.id || '3'));
     }
   }, [urlParams.id]);
@@ -22,10 +23,11 @@ function ProfilePage () {
   return (
     <PageWrapper>
       {profile.loading && <Loader />}
-      {profile.value !== null && (
+      {profile.data !== null && (
         <>
           <ProfileHeader />
           <ProfileActions />
+          <ProfileRatings />
         </>
       )}
     </PageWrapper>

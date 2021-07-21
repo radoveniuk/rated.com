@@ -6,6 +6,8 @@ export const ProfileActionsWrapper = styled.div`
 
   .buttons-wrap {
     margin: 0 auto;
-    width: fit-content;
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
   }
 `;

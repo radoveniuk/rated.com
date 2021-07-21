@@ -14,10 +14,10 @@ function ProfilePage () {
   const { profile } = useAppSelector(selectProfile);
 
   useEffect(() => {
-    dispatch(profileFetch(urlParams.id || '3'));
-  }, []);
-
-  console.log(profile);
+    if (urlParams.id || !profile.value || profile.value.id !== '3') {
+      dispatch(profileFetch(urlParams.id || '3'));
+    }
+  }, [urlParams.id]);
 
   return (
     <PageWrapper>

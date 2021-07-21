@@ -11,8 +11,10 @@ import {
 } from 'react-router-dom';
 import { NavigationWrapper } from './Navigation.style';
 import { MenuSections } from 'app/constants/menu-sections';
+import useTranslate from 'app/hooks/useTranslate';
 
 const Navigation: FC<{ currentPage: string }> = ({ currentPage }) => {
+  const { localize } = useTranslate();
   const [value, setValue] = useState(currentPage);
   const location = useLocation();
 
@@ -39,7 +41,7 @@ const Navigation: FC<{ currentPage: string }> = ({ currentPage }) => {
           key={value}
           component={Link}
           to={to}
-          label={label}
+          label={localize(label)}
           value={value}
           icon={<Icon />}
         />

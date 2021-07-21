@@ -7,8 +7,10 @@ import { DoneOutlineIcon } from 'app/components/icons';
 import { RateContentWrapper } from './RateContent.style';
 import { useEffect } from 'react';
 import { submitRate } from 'app/store/reducers/new-rate/newRateAPI';
+import useTranslate from 'app/hooks/useTranslate';
 
 function RateContent () {
+  const { localize } = useTranslate();
   const { newRate } = useAppSelector(selectNewRate);
   const dispatch = useAppDispatch();
 
@@ -27,8 +29,8 @@ function RateContent () {
       {newRate.loading && <Loader />}
         {newRate.value !== null && (
           <div className="rate-content">
-            <div className="title">{!newRate.submited ? newRate.value.title : 'Thanks!'}</div>
-            <div className="description">{!newRate.submited ? newRate.value.description : 'Your rate has been submitted'}</div>
+            <div className="title">{!newRate.submited ? newRate.value.title : localize('create_rating.thanks')}</div>
+            <div className="description">{!newRate.submited ? newRate.value.description : localize('create_rating.success')}</div>
             <div className="rating-wrapper">
               <Rating
                 name="anonymus-rating"

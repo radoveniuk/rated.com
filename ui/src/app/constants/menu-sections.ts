@@ -2,19 +2,19 @@ import { HomeIcon, PersonIcon, SearchIcon } from '../components/icons';
 
 export const MenuSections = [
   {
-    label: 'Home',
+    label: 'menu.home',
     value: '',
     to: '',
     Icon: HomeIcon,
   },
   {
-    label: 'Search',
+    label: 'menu.search',
     value: 'search',
     to: '/search',
     Icon: SearchIcon,
   },
   {
-    label: 'Profile',
+    label: 'menu.profile',
     value: 'profile',
     to: '/profile',
     Icon: PersonIcon,

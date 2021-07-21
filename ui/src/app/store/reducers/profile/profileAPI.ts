@@ -5,6 +5,7 @@ interface IFetchedProfileResult {
     name: string;
     username: string;
     email: string;
+    rating: number;
   }
 }
 
@@ -13,7 +14,12 @@ export async function fetchProfile (id: string) {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => response.json())
       .then(data => {
-        resolve({ data });
+        resolve({
+          data: {
+            ...data,
+            rating: Math.floor(Math.random() * 5),
+          },
+        });
       }),
   );
 }

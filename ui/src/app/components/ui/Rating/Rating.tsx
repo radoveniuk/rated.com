@@ -1,15 +1,17 @@
 import MaterialRating from '@material-ui/lab/Rating';
-import { BaseSyntheticEvent, FC } from 'react';
+import { useState, BaseSyntheticEvent, FC } from 'react';
+
 import { RatingWrapper } from './Rating.style';
 
 interface IRatingProps {
   name: string;
-  defaultValue: number;
-  maxValue: number;
-  precision: number;
-  onChange: (value: number | null) => void;
+  defaultValue: number | null;
+  maxValue?: number;
+  precision?: number;
+  onChange?: (value: number | null) => void;
   size?: 'small' | 'large' | 'medium';
   disabled?: boolean;
+  readOnly?: boolean;
 }
 
 const Rating: FC<IRatingProps> = ({
@@ -20,20 +22,27 @@ const Rating: FC<IRatingProps> = ({
   onChange,
   size,
   disabled,
+  readOnly,
 }) => {
+  const [value, setValue] = useState(defaultValue);
   const changeHandler = (e: BaseSyntheticEvent, newValue: number | null) => {
-    onChange(newValue);
+    if (onChange) {
+      setValue(newValue);
+      onChange(newValue);
+    }
   };
   return (
     <RatingWrapper>
       <MaterialRating
         name={name}
-        precision={precision}
-        defaultValue={defaultValue}
-        max={maxValue}
+        precision={precision || 1}
+        // defaultValue={value}
+        value={value}
+        max={maxValue || 5}
         onChange={changeHandler}
         size={size}
         disabled={disabled}
+        readOnly={readOnly}
       />
     </RatingWrapper>
   );

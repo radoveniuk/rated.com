@@ -7,6 +7,7 @@ type ProfileType = {
   name: string,
   username: string,
   email: string,
+  rating: number,
 }
 
 export interface ProfileState {

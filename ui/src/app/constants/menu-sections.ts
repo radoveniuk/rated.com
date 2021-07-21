@@ -1,4 +1,4 @@
-import { HomeIcon, PersonIcon, StarIcon } from '../components/icons';
+import { HomeIcon, PersonIcon, SearchIcon } from '../components/icons';
 
 export const MenuSections = [
   {
@@ -8,10 +8,10 @@ export const MenuSections = [
     Icon: HomeIcon,
   },
   {
-    label: 'Favorites',
-    value: 'favorites',
-    to: '/favorites',
-    Icon: StarIcon,
+    label: 'Search',
+    value: 'search',
+    to: '/search',
+    Icon: SearchIcon,
   },
   {
     label: 'Profile',

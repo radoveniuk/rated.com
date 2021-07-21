@@ -1,7 +1,7 @@
 import Loader from 'app/components/ui/loader';
 import Rating from 'app/components/ui/rating';
-import { useAppDispatch } from 'app/hooks/redux/useAppDispatch';
-import { useAppSelector } from 'app/hooks/redux/useAppSelector';
+import { useAppDispatch } from 'app/hooks/useAppDispatch';
+import { useAppSelector } from 'app/hooks/useAppSelector';
 import { selectNewRate, setRate } from 'app/store/reducers/new-rate/newRateSlice';
 import { DoneOutlineIcon } from 'app/components/icons';
 import { RateContentWrapper } from './RateContent.style';

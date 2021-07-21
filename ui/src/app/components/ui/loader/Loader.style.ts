@@ -5,7 +5,7 @@ interface ILoaderProps {
   isFixed?: boolean;
 }
 
-const Loader = styled.div<ILoaderProps>`
+const LoaderWrapper = styled.div<ILoaderProps>`
   display: block;
   position: absolute;
   width: 100%;
@@ -39,4 +39,4 @@ const Loader = styled.div<ILoaderProps>`
   }
 `;
 
-export default Loader;
+export default LoaderWrapper;

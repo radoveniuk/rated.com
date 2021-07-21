@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from '../../hooks/redux/useAppDispatch';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
 import useGlobalData from '../../hooks/useGlobalData';
 import { emptyRateFetch } from '../../store/reducers/new-rate/newRateSlice';
 import { PageWrapper } from '../../styles/base-components';

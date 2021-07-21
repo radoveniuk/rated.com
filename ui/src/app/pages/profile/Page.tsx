@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from 'app/hooks/redux/useAppDispatch';
+import { useAppDispatch } from 'app/hooks/useAppDispatch';
 import useGlobalData from 'app/hooks/useGlobalData';
 import { PageWrapper } from 'app/styles/base-components';
 import { profileFetch, selectProfile } from 'app/store/reducers/profile/profileSlice';
-import { useAppSelector } from 'app/hooks/redux/useAppSelector';
+import { useAppSelector } from 'app/hooks/useAppSelector';
 import ProfileHeader from './components/profile-header';
+import Loader from 'app/components/ui/loader';
+import ProfileActions from './components/profile-actions';
 
 function ProfilePage () {
   const { urlParams } = useGlobalData();
@@ -19,7 +21,13 @@ function ProfilePage () {
 
   return (
     <PageWrapper>
-      <ProfileHeader />
+      {profile.loading && <Loader />}
+      {profile.value !== null && (
+        <>
+          <ProfileHeader />
+          <ProfileActions />
+        </>
+      )}
     </PageWrapper>
   );
 }

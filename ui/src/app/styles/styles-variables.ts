@@ -11,10 +11,3 @@ export const colors = {
   blackGrey: '#4a4a4a',
   blackDarkGrey: '#3B3B3B',
 };
-
-export const breakpoints = {
-  lg: 1199,
-  md: 991,
-  sm: 767,
-  xs: 575,
-};

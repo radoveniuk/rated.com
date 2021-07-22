@@ -1,10 +1,16 @@
 import { FC } from 'react';
 import { RatingSettingsWrapper } from './RatingSettings.style';
 
-const RatingSettings: FC = () => {
+interface IRatingSettingsProps {
+  readOnly: boolean;
+}
+
+const RatingSettings: FC<IRatingSettingsProps> = ({
+  readOnly,
+}) => {
   return (
     <RatingSettingsWrapper>
-      Settings
+      Settings {readOnly}
     </RatingSettingsWrapper>
   );
 };

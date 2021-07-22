@@ -4,7 +4,7 @@ import RatingSettings from './components/rating-settings';
 function AddEditRatingPage () {
   return (
     <PageWrapper>
-      <RatingSettings />
+      <RatingSettings readOnly={false} />
     </PageWrapper>
   );
 }

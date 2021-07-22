@@ -3,6 +3,7 @@ import Button from 'app/components/forms/button';
 import { ProfileActionsWrapper } from './ProfileActions.style';
 import { EditIcon, PlusIcon } from 'app/components/icons';
 import useTranslate from 'app/hooks/useTranslate';
+import { Link } from 'react-router-dom';
 
 const ProfileActions: FC = () => {
   const { localize } = useTranslate();
@@ -13,10 +14,12 @@ const ProfileActions: FC = () => {
           {localize('profile.edit')}
           <EditIcon />
         </Button>
-        <Button>
-          {localize('profile.new_rating')}
-          <PlusIcon />
-        </Button>
+        <Link to="/create-rating">
+          <Button>
+            {localize('profile.new_rating')}
+            <PlusIcon />
+          </Button>
+        </Link>
       </div>
     </ProfileActionsWrapper>
   );

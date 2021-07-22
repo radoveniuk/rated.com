@@ -1,3 +1,4 @@
+import AddEditRatingPage from 'app/pages/add-edit-rating';
 import { FC } from 'react';
 import {
   BrowserRouter,
@@ -14,8 +15,14 @@ const Router: FC = ({ children }) => {
         <Route path="/profile">
           <ProfilePage />
         </Route>
-        <Route path="/create-rate">
+        <Route path="/rate">
           <CreateRatingPage />
+        </Route>
+        <Route path="/create-rating">
+          <AddEditRatingPage />
+        </Route>
+        <Route path="/edit-rating">
+          <AddEditRatingPage />
         </Route>
       </Switch>
       {children}

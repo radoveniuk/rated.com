@@ -26,10 +26,10 @@ const Navigation: FC<{ currentPage: string }> = ({ currentPage }) => {
   return (
     <NavigationWrapper>
       <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
       >
         {MenuSections.map(({
           label,

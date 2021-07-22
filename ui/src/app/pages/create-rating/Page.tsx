@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from '../../hooks/useAppDispatch';
-import useGlobalData from '../../hooks/useGlobalData';
-import { emptyRateFetch } from '../../store/reducers/new-rate/newRateSlice';
-import { PageWrapper } from '../../styles/base-components';
+import { useAppDispatch } from 'app/hooks/useAppDispatch';
+import useGlobalData from 'app/hooks/useGlobalData';
+import { emptyRateFetch } from 'app/store/reducers/new-rate/newRateSlice';
+import { PageWrapper } from 'app/styles/base-components';
 import RateContent from './components/rate-content';
 
 // http://localhost:3000/create-rate?id=777

@@ -11,7 +11,7 @@ const ShortRatingItem: FC<IShortRatingItemProps> = ({
   ratingItem,
 }) => {
   return (
-    <ShortRatingItemWrapper to={`/create-rate?id=${ratingItem.id}`}>
+    <ShortRatingItemWrapper to={`/edit-rating?id=${ratingItem.id}`}>
       <strong>{ratingItem.name}</strong>
       <p>{ratingItem.description}</p>
       <Rating readOnly defaultValue={ratingItem.rating} name={`profile-rating-${ratingItem.id}`} />

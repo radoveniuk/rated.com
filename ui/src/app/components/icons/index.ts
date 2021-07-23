@@ -5,3 +5,5 @@ export { default as SearchIcon } from '@material-ui/icons/Search';
 export { default as DoneOutlineIcon } from '@material-ui/icons/DoneOutline';
 export { default as EditIcon } from '@material-ui/icons/Edit';
 export { default as PlusIcon } from '@material-ui/icons/PlusOne';
+export { default as LikeIcon } from '@material-ui/icons/ThumbUpAltOutlined';
+export { default as DislikeIcon } from '@material-ui/icons/ThumbDownAltOutlined';

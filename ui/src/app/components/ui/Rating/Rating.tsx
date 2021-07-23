@@ -1,6 +1,5 @@
 import MaterialRating from '@material-ui/lab/Rating';
 import { useState, BaseSyntheticEvent, FC } from 'react';
-
 import { RatingWrapper } from './Rating.style';
 
 interface IRatingProps {
@@ -25,12 +24,14 @@ const Rating: FC<IRatingProps> = ({
   readOnly,
 }) => {
   const [value, setValue] = useState(defaultValue);
+
   const changeHandler = (e: BaseSyntheticEvent, newValue: number | null) => {
     if (onChange) {
       setValue(newValue);
       onChange(newValue);
     }
   };
+
   return (
     <RatingWrapper>
       <MaterialRating

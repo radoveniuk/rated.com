@@ -1,4 +1,13 @@
 import { css } from 'styled-components';
+import { breakpoints } from './styles-variables';
+
+function getDisplays (breakpoint: string) {
+  return `
+  .d-${breakpoint}-none { display: none !important; }
+  .d-${breakpoint}-block { display: block !important; }
+  .d-${breakpoint}-flex { display: flex !important; }
+`;
+}
 
 function getPaddings (size: number) {
   return `
@@ -80,6 +89,12 @@ export function generateStyles () {
         ${getWidth(i)}
       `;
   }
+  Object.keys(breakpoints).forEach((breakpoint) => {
+    style += `@media (max-width: ${breakpoints[breakpoint]}px) {
+      ${getDisplays(breakpoint)}
+    }
+    `;
+  });
   style += getFlexParams();
   return css`${style}`;
 }

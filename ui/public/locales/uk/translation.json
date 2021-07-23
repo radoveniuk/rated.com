@@ -11,5 +11,14 @@
   "create_rating": {
     "thanks": "Дякуємо!",
     "success": "Ваш відгук було надіслано"
+  },
+  "rating_settings": {
+    "name": "Назва",
+    "description": "Опис",
+    "extra_field": "Додаткові параметри",
+    "type": "Тип",
+    "icons": "Спрощений",
+    "stars": "Класичний",
+    "settings": "Налаштування рейтингу"
   }
 }

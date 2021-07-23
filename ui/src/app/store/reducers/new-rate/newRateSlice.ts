@@ -1,23 +1,17 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Rating } from 'app/types/rating';
 import { RootState } from '../..';
 import { fetchRate } from './newRateAPI';
 
-type NewRateType = {
-  id: string,
-  title: string,
-  rate: number | null,
-  description: string,
-}
-
 export interface NewRateState {
-  value: NewRateType | null;
+  data: Rating | null;
   loading: boolean,
   error: boolean | null,
   submited: boolean,
 }
 
 const initialState: NewRateState = {
-  value: null,
+  data: null,
   loading: true,
   error: null,
   submited: false,
@@ -35,9 +29,9 @@ export const newRateSlice = createSlice({
   name: 'newRate',
   initialState,
   reducers: {
-    setRate: (state, action: PayloadAction<number | null>) => {
-      if (state.value) {
-        state.value.rate = action.payload;
+    setRate: (state, action: PayloadAction<number | null | undefined>) => {
+      if (state.data) {
+        state.data.rate = action.payload;
         state.submited = true;
       }
     },
@@ -49,7 +43,7 @@ export const newRateSlice = createSlice({
       })
       .addCase(emptyRateFetch.fulfilled, (state, action) => {
         state.loading = false;
-        state.value = {
+        state.data = {
           ...action.payload,
           rate: 0,
         };

@@ -1,4 +1,4 @@
-import { Rating } from 'app/types/rating';
+import { Rating } from '../../../types/rating';
 
 // A mock function to mimic making an async request for data
 interface IFetchedRateResult {
@@ -10,15 +10,15 @@ export function fetchRate (id: string) {
     setTimeout(() => resolve({
       data: {
         id,
-        name: 'Bohdan Radoveniuk',
-        description: 'Frontend developer',
+        name: 'default rating',
+        description: 'default rating',
         type: 'stars',
       },
     }), 500),
   );
 }
 
-export function submitRate (params: IFetchedRateResult) {
+export function saveRating (params: IFetchedRateResult) {
   console.log({
     ...params,
   });

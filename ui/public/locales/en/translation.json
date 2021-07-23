@@ -11,5 +11,14 @@
   "create_rating": {
     "thanks": "Thanks!",
     "success": "Your rate has been submitted"
+  },
+  "rating_settings": {
+    "name": "Name",
+    "description": "Description",
+    "extra_field": "Additional fields",
+    "type": "Type",
+    "icons": "Simple",
+    "stars": "Stars",
+    "settings": "Rating settings"
   }
 }

@@ -52,10 +52,10 @@ export function getUrlParams (url: string) {
 //   return temporalDivElement.textContent || temporalDivElement.innerText || '';
 // }
 
-// export function round (value, decimals = 2) {
-//   const roundValue = Math.round(`${value}e${decimals}`);
-//   return Number(`${roundValue}e-${decimals}`);
-// }
+export function round (value: number | string, decimals = 2) {
+  const roundValue = Math.round(Number(`${value}e${decimals}`));
+  return Number(`${roundValue}e-${decimals}`);
+}
 
 // export function generateUniqueHash (length = 15) {
 //   return `${Date.now().toString(36)}${Math.random().toString(36).substr(0, length)}`.toLowerCase();

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RatingSettingsWrapper = styled.div`
+export const PreviewWrapper = styled.div`
   text-align: center;
   flex-grow: 1;
 `;

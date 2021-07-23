@@ -1,4 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import ratingSlice from './reducers/editing-rating/editingRatingSlice';
 import newRateSlice from './reducers/new-rate/newRateSlice';
 import profileSlice from './reducers/profile/profileSlice';
 
@@ -6,6 +7,7 @@ export const store = configureStore({
   reducer: {
     newRate: newRateSlice,
     profile: profileSlice,
+    rating: ratingSlice,
   },
 });
 

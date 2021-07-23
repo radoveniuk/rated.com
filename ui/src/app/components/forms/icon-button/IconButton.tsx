@@ -1,11 +1,18 @@
 import { FC } from 'react';
 import { IconButtonStyled } from './IconButton.style';
 
-const IconButton: FC = ({
+type IconButtonProps = {
+  onClick?: () => void,
+  disabled?: boolean,
+}
+
+const IconButton: FC<IconButtonProps> = ({
+  onClick,
   children,
+  disabled,
 }) => {
   return (
-    <IconButtonStyled>
+    <IconButtonStyled onClick={onClick} disabled={disabled}>
       {children}
     </IconButtonStyled>
   );

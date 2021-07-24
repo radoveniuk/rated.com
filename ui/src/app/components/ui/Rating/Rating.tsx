@@ -4,7 +4,7 @@ import { RatingWrapper } from './Rating.style';
 
 interface IRatingProps {
   name: string;
-  defaultValue: number | null;
+  defaultValue?: number | null;
   maxValue?: number;
   precision?: number;
   onChange?: (value: number | null) => void;

@@ -47,6 +47,11 @@ export const ratingSlice = createSlice({
         state.data.extraFields = action.payload;
       }
     },
+    resetRating: (state) => {
+      state.data = initialState.data;
+      state.error = initialState.error;
+      state.loading = initialState.loading;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -63,7 +68,7 @@ export const ratingSlice = createSlice({
   },
 });
 
-export const { updateName, updateDescription, updateExtraFields, updateViewType } = ratingSlice.actions;
+export const { updateName, updateDescription, updateExtraFields, updateViewType, resetRating } = ratingSlice.actions;
 
 export const selectRating = (state: RootState) => state;
 

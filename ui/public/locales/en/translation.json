@@ -20,5 +20,8 @@
     "icons": "Simple",
     "stars": "Stars",
     "settings": "Rating settings"
+  },
+  "register": {
+    "username": "Username"
   }
 }

@@ -6,12 +6,14 @@ type RatingType = {
 }
 
 export type ProfileType = {
-  id: string,
-  name: string,
+  id: string |null,
+  name?: string,
+  description?: string,
   username: string,
   email: string,
-  rating: number,
-  ratings: RatingType[],
+  rating?: number,
+  category?: string,
+  ratings?: RatingType[],
 }
 
 export interface IProfileState {

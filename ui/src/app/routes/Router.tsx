@@ -1,12 +1,13 @@
-import AddEditRatingPage from 'app/pages/add-edit-rating';
 import { FC } from 'react';
 import {
   BrowserRouter,
   Switch,
   Route,
 } from 'react-router-dom';
-import CreateRatingPage from '../pages/create-rating';
-import ProfilePage from '../pages/profile';
+import RatePage from 'app/pages/rate';
+import ProfilePage from 'app/pages/profile';
+import AddEditRatingPage from 'app/pages/add-edit-rating';
+import RegisterPage from 'app/pages/register';
 
 const Router: FC = ({ children }) => {
   return (
@@ -16,13 +17,16 @@ const Router: FC = ({ children }) => {
           <ProfilePage />
         </Route>
         <Route path="/rate">
-          <CreateRatingPage />
+          <RatePage />
         </Route>
         <Route path="/create-rating">
           <AddEditRatingPage />
         </Route>
         <Route path="/edit-rating">
           <AddEditRatingPage />
+        </Route>
+        <Route path="/register">
+          <RegisterPage />
         </Route>
       </Switch>
       {children}

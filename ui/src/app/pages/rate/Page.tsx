@@ -6,7 +6,7 @@ import { PageWrapper } from 'app/styles/base-components';
 import RateContent from './components/rate-content';
 
 // http://localhost:3000/create-rate?id=777
-function CreateRatingPage () {
+function RatePage () {
   const { urlParams } = useGlobalData();
   const dispatch = useAppDispatch();
 
@@ -23,4 +23,4 @@ function CreateRatingPage () {
   );
 }
 
-export default CreateRatingPage;
+export default RatePage;

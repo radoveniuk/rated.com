@@ -6,4 +6,9 @@ export const RegisterFormWrapper = styled.div`
   margin: 50px auto;
   border: 1px solid ${colors.primary};
   border-radius: 20px;
+  text-align: center;
+
+  button {
+    margin-bottom: 24px;
+  }
 `;

@@ -1,0 +1,14 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+export default function {{properCase title}}() {
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <div>{{kebabCase title}} component</div>
+  );
+}
+
+{{properCase title}}.propTypes = {};
+
+{{properCase title}}.defaultProps = {};

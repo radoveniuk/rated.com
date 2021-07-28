@@ -1,0 +1,14 @@
+import { FC } from 'react';
+import { {{properCase title}}Wrapper } from './{{properCase title}}.style';
+
+type {{properCase title}}Props = {};
+
+const {{properCase title}}: FC<{{properCase title}}Props> = () => {
+  return (
+    <{{properCase title}}Wrapper>{{kebabCase title}} component</{{properCase title}}Wrapper>
+  );
+};
+
+{{properCase title}}.defaultProps = {};
+
+export default {{properCase title}};

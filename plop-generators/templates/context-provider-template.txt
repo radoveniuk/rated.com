@@ -1,0 +1,27 @@
+import React, { createContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import useFetch from 'hooks/useFetch';
+import usePageState from 'hooks/usePageState';
+
+export const {{properCase title}}Context = createContext({});
+export const {{properCase title}}Consumer = {{properCase title}}Context.Consumer;
+
+export default function {{properCase title}}Provider({ children }) {
+  const { postFormData } = useFetch();
+  const { setPageState } = usePageState();
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {}, []);
+
+  return (
+    <{{properCase title}}Context.Provider
+      value={}
+    >
+      {children}
+    </{{properCase title}}Context.Provider>
+  );
+}
+
+{{properCase title}}Provider.propTypes = {
+  children: PropTypes.any.isRequired,
+};

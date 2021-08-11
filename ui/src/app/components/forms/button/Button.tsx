@@ -4,16 +4,18 @@ import { ButtonInput } from './Button.style';
 interface IButtonProps {
   variant?: 'text' | 'outlined' | 'contained',
   color?: 'inherit' | 'primary' | 'secondary' | 'default',
-  backgroundtype?: string
+  backgroundtype?: string,
+  type?: 'submit' | 'reset' | 'button',
 }
 
 const Button: FC<IButtonProps> = ({
   children,
   variant,
   color,
+  type,
 }) => {
   return (
-    <ButtonInput variant={variant} color={color}>
+    <ButtonInput type={type} variant={variant} color={color}>
       {children}
     </ButtonInput>
   );
